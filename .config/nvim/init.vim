@@ -14,8 +14,7 @@ set list
 set listchars=tab:→\ ,trail:·,precedes:«,extends:»
 set scrolloff=8
 set sidescrolloff=8
-" set completeopt=menu,menuone,noselect
-set completeopt-=preview
+set completeopt=menu,menuone,noselect
 " ==============================
 
 " ==============================
@@ -38,38 +37,22 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'windwp/nvim-autopairs'
 " Plug 'sheerun/vim-polyglot'
-" Plug 'ycm-core/YouCompleteMe'
 Plug 'tpope/vim-commentary'
 call plug#end()
 " ==============================
 
 " ==============================
 " Keymaps
-" LuaSnip
-imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
-inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
-snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
-snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
-imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
-smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 " ==============================
-"
+
 " ==============================
 " Plugins Vimscript
 source ~/.config/nvim/plugins/gruvbox.vim
 " source ~/.config/nvim/plugins/catppucin.vim
 source ~/.config/nvim/plugins/airline.vim
 source ~/.config/nvim/plugins/indentline.vim
-
-" source ~/.config/nvim/plugins/youcompleteme.vim
 " ==============================
 
 " ==============================
 " Plugins Lua script
 :lua require('plugins')
-" :lua require('treesitter')
-" :lua require('nvim-lspconfig')
-" :lua require('cmp-nvim-lsp')
-" :lua require('luasnip')
-" :lua require('autopairs')
-
