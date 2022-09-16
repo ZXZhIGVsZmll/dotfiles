@@ -1,1 +1,6 @@
 copy-configs.sh
+
+# Neovim
+nvim/plugin/
+nvim/*.spl
+nvim/.netrwhist
