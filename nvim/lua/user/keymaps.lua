@@ -17,3 +17,9 @@ vim.keymap.set('v', '<', '<gv')
 -- Jump between buffers
 vim.keymap.set('n', '<Leader><Tab>', ':bn<CR>')
 vim.keymap.set('n', '<Leader><S-Tab>', ':bp<CR>')
+
+-- Telescope
+vim.keymap.set('n', '<Leader>ff', '<cmd>Telescope find_files<CR>')
+vim.keymap.set('n', '<Leader>bf', '<cmd>Telescope buffers<CR>')
+
+-- More lsp specific keymaps at ./plugins/lspconfig.lua

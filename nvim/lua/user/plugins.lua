@@ -1,12 +1,19 @@
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
+  use 'joshdick/onedark.vim'
+
+  use 'morhetz/gruvbox'
+
   use 'tpope/vim-commentary'
+
+  use 'tpope/vim-surround'
+
+  use 'tpope/vim-sleuth'
 
   use {
     'catppuccin/nvim',
     as = 'catppuccin',
-    config = { 'vim.g.catppuccin_flavour = "macchiato"', 'vim.cmd[[colorscheme catppuccin]]' }
   }
 
   use { 'neovim/nvim-lspconfig',
@@ -25,6 +32,7 @@ return require('packer').startup(function(use)
       'hrsh7th/cmp-cmdline',
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
+      'rafamadriz/friendly-snippets',
     },
     config = function()
       require('user.plugins.cmp')
@@ -96,4 +104,7 @@ return require('packer').startup(function(use)
       require('user.plugins.dashboard')
     end,
   }
+
+  -- TODO
+  -- null-ls.nvim
 end)

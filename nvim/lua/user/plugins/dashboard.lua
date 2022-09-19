@@ -42,4 +42,7 @@ db.custom_center = {
   shortcut = 'SPC n', desc = 'File Browser              ',
   action = 'NvimTreeFindFileToggle' },
 
+  { icon = '   ',
+  shortcut = 'SPC q', desc = 'Close Neovim              ',
+  action = 'q' },
 }
