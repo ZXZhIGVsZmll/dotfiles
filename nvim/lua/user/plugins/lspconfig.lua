@@ -6,10 +6,10 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<Leader>dj', vim.diagnostic.goto_next, bufopts)
-  vim.keymap.set('n', '<Leader>dk', vim.diagnostic.goto_prev, bufopts)
-  vim.keymap.set('n', '<Leader>dl', '<cmd>Telescope diagnostics<CR>', bufopts)
+  vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, bufopts)
+  -- vim.keymap.set('n', '<Leader>dj', vim.diagnostic.goto_next, bufopts)
+  -- vim.keymap.set('n', '<Leader>dk', vim.diagnostic.goto_prev, bufopts)
+  vim.keymap.set('n', '<Leader>fd', '<cmd>Telescope diagnostics<CR>', bufopts)
 end
 
 require('lspconfig').pyright.setup {
