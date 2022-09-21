@@ -11,6 +11,10 @@ return require('packer').startup(function(use)
 
   use 'tpope/vim-sleuth'
 
+  use 'farmergreg/vim-lastplace'
+
+  use 'nvim-treesitter/nvim-treesitter-context'
+
   use {
     'catppuccin/nvim',
     as = 'catppuccin',
@@ -102,6 +106,20 @@ return require('packer').startup(function(use)
     'glepnir/dashboard-nvim',
     config = function()
       require('user.plugins.dashboard')
+    end,
+  }
+
+  use {
+    'karb94/neoscroll.nvim',
+    config = function()
+      require('user.plugins.neoscroll')
+    end,
+  }
+
+  use {
+    'folke/which-key.nvim',
+    config = function()
+      require('user.plugins.which-key')
     end,
   }
 
