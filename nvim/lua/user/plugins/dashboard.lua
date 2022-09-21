@@ -1,48 +1,44 @@
+local home = os.getenv('HOME')
 local db = require('dashboard')
-db.custom_header = {
-'',
-' ⣇⣿⠘⣿⣿⣿⡿⡿⣟⣟⢟⢟⢝⠵⡝⣿⡿⢂⣼⣿⣷⣌⠩⡫⡻⣝⠹⢿⣿⣷ ',
-' ⡆⣿⣆⠱⣝⡵⣝⢅⠙⣿⢕⢕⢕⢕⢝⣥⢒⠅⣿⣿⣿⡿⣳⣌⠪⡪⣡⢑⢝⣇ ',
-' ⡆⣿⣿⣦⠹⣳⣳⣕⢅⠈⢗⢕⢕⢕⢕⢕⢈⢆⠟⠋⠉⠁⠉⠉⠁⠈⠼⢐⢕⢽ ',
-' ⡗⢰⣶⣶⣦⣝⢝⢕⢕⠅⡆⢕⢕⢕⢕⢕⣴⠏⣠⡶⠛⡉⡉⡛⢶⣦⡀⠐⣕⢕ ',
-' ⡝⡄⢻⢟⣿⣿⣷⣕⣕⣅⣿⣔⣕⣵⣵⣿⣿⢠⣿⢠⣮⡈⣌⠨⠅⠹⣷⡀⢱⢕ ',
-' ⡝⡵⠟⠈⢀⣀⣀⡀⠉⢿⣿⣿⣿⣿⣿⣿⣿⣼⣿⢈⡋⠴⢿⡟⣡⡇⣿⡇⡀⢕ ',
-' ⡝⠁⣠⣾⠟⡉⡉⡉⠻⣦⣻⣿⣿⣿⣿⣿⣿⣿⣿⣧⠸⣿⣦⣥⣿⡇⡿⣰⢗⢄ ',
-' ⠁⢰⣿⡏⣴⣌⠈⣌⠡⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣬⣉⣉⣁⣄⢖⢕⢕⢕ ',
-' ⡀⢻⣿⡇⢙⠁⠴⢿⡟⣡⡆⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣵⣵⣿ ',
-' ⡻⣄⣻⣿⣌⠘⢿⣷⣥⣿⠇⣿⣿⣿⣿⣿⣿⠛⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ',
-' ⣷⢄⠻⣿⣟⠿⠦⠍⠉⣡⣾⣿⣿⣿⣿⣿⣿⢸⣿⣦⠙⣿⣿⣿⣿⣿⣿⣿⣿⠟ ',
-' ⡕⡑⣑⣈⣻⢗⢟⢞⢝⣻⣿⣿⣿⣿⣿⣿⣿⠸⣿⠿⠃⣿⣿⣿⣿⣿⣿⡿⠁⣠ ',
-' ⡝⡵⡈⢟⢕⢕⢕⢕⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣿⠿⠋⣀⣈⠙ ',
-' ⡝⡵⡕⡀⠑⠳⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⢉⡠⡲⡫⡪⡪⡣ ',
-'',
-}
 
-db.preview_file_height = 100
-db.preview_file_width = 100
+db.preview_command = 'cat | lolcat -F 0.5'
+db.preview_file_path = home .. '/.config/nvim/lua/user/plugins/dashboard-header.txt'
+
+db.preview_file_height = 15
+db.preview_file_width = 30
 
 db.custom_center = {
-  { icon = '   ',
-  desc = 'New file                       ',
-  action = 'enew' },
+  {
+    icon = '  ',
+    desc = 'New File    ',
+    action = 'enew'
+  },
 
-  { icon = '   ',
-  shortcut = 'SPC f', desc = 'Find file                 ',
-  action = 'Telescope find_files' },
+  {
+    icon = '  ',
+    desc = 'Find File   ',
+    action = 'Telescope find_files'
+  },
 
-  { icon = '   ',
-  shortcut = 'SPC h', desc = 'Recent files              ',
-  action = 'Telescope oldfiles' },
+  {
+    icon = '  ',
+    desc = 'Recent Files',
+    action = 'Telescope oldfiles'
+  },
 
-  { icon = '   ',
-  shortcut = 'SPC g', desc = 'Find Word                 ',
-  action = 'Telescope live_grep' },
+  {
+    icon = '  ',
+    desc = 'File Browser',
+    action = 'NvimTreeFindFileToggle'
+  },
 
-  { icon = '   ',
-  shortcut = 'SPC n', desc = 'File Browser              ',
-  action = 'NvimTreeFindFileToggle' },
-
-  { icon = '   ',
-  shortcut = 'SPC q', desc = 'Close Neovim              ',
-  action = 'q' },
+  {
+    icon = '  ',
+    desc = 'Close Neovim',
+    action = 'q'
+  },
 }
+
+db.custom_footer = { '' }
+
+vim.api.nvim_set_hl(0, 'DashboardCenter', { fg = '#ff1493' })
