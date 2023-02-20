@@ -1,5 +1,6 @@
 require('lualine').setup {
-  options = { theme = 'onedark' },
+  options = { theme = 'auto' },
+  -- options = { theme = 'onedark' },
   tabline = {
     lualine_a = { 'buffers' },
   }
