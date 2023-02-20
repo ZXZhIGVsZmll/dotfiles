@@ -12,7 +12,7 @@ vim.opt.ignorecase = true
 vim.opt.wrap = false
 vim.opt.breakindent = true -- maintain indent when wrapping indented lines
 vim.opt.list = true
-vim.opt.listchars = { tab = '→ ', trail = '·', precedes = '«', extends = '»' }
+vim.opt.listchars = { tab = '→ ', lead = '·', trail = '·', precedes = '«', extends = '»' }
 vim.opt.fillchars:append({ eob = ' ' }) -- remove the ~ from end of buffer
 vim.opt.mouse = 'a'
 vim.opt.splitbelow = true
@@ -29,3 +29,4 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.signcolumn = 'yes:1'
 -- vim.opt.showmode = false
 vim.opt.completeopt= { 'menu', 'menuone', 'noselect' } -- Suggested by nvim-cmp
+-- vim.opt.hlsearch = false
