@@ -1,9 +1,6 @@
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
-  use 'joshdick/onedark.vim'
-
-  use 'morhetz/gruvbox'
 
   use 'tpope/vim-commentary'
 
@@ -11,20 +8,26 @@ return require('packer').startup(function(use)
 
   use 'tpope/vim-sleuth'
 
+  use 'editorconfig/editorconfig-vim'
+
   use 'farmergreg/vim-lastplace'
+
+  use 'sbdchd/neoformat'
 
   use 'nvim-treesitter/nvim-treesitter-context'
 
-  use {
-    'catppuccin/nvim',
-    as = 'catppuccin',
-  }
 
   use { 'neovim/nvim-lspconfig',
     config = function()
       require('user.plugins.lspconfig')
     end,
   }
+
+  -- use { 'williamboman/mason.nvim',
+  --   config = function()
+  --     require('user.plugins.mason')
+  --   end,
+  -- }
 
   use {
     'hrsh7th/nvim-cmp',
@@ -60,10 +63,10 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.0', -- It is not YET suggested to use master branch
+    tag = '0.1.1', -- It is not YET suggested to use master branch
     requires = {
       'nvim-lua/plenary.nvim',
-      'kyazdani42/nvim-web-devicons',
+      'nvim-tree/nvim-web-devicons',
     },
     config = function()
       require('user.plugins.telescope')
@@ -71,9 +74,9 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'kyazdani42/nvim-tree.lua',
+    'nvim-tree/nvim-tree.lua',
     requires = {
-      'kyazdani42/nvim-web-devicons',
+      'nvim-tree/nvim-web-devicons',
     },
     config = function()
       require('user.plugins.nvim-tree')
@@ -96,7 +99,7 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-lualine/lualine.nvim',
-    requires = 'kyazdani42/nvim-web-devicons',
+    requires = 'nvim-tree/nvim-web-devicons',
     config = function()
       require('user.plugins.lualine')
     end,
@@ -104,8 +107,9 @@ return require('packer').startup(function(use)
 
   use {
     'glepnir/dashboard-nvim',
+    event = 'VimEnter',
     config = function()
-      require('user.plugins.dashboard')
+      require('user.plugins.dashboard-nvim')
     end,
   }
 
@@ -123,6 +127,34 @@ return require('packer').startup(function(use)
     end,
   }
 
-  -- TODO
-  -- null-ls.nvim
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    config = function()
+      require('user.plugins.null-ls')
+    end,
+    requires = {
+      'nvim-lua/plenary.nvim',
+    },
+  }
+  -- Themes
+  use 'joshdick/onedark.vim'
+
+  use 'morhetz/gruvbox'
+
+  use {
+    'scysta/pink-panic.nvim',
+    requires = {
+      'rktjmp/lush.nvim',
+    }
+  }
+
+  use {
+    'catppuccin/nvim',
+    as = 'catppuccin',
+  }
+
+  use {
+    'rose-pine/neovim',
+    as = 'rose-pine',
+  }
 end)
