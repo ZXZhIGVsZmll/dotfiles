@@ -20,9 +20,13 @@ require('lspconfig').pyright.setup {
 require('lspconfig').tailwindcss.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = { "html", "css", "javascript", "php", "markdown", "django-html", "htmldjango",},
+  filetypes = { "html", "css", "javascript", "php", "markdown", "htmldjango",},
 }
 
+require('lspconfig').bashls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 
 --[[
 require('lspconfig').tsserver.setup {
