@@ -128,6 +128,17 @@ return require('packer').startup(function(use)
   }
 
   use {
+    'folke/noice.nvim',
+    config = function()
+      require('user.plugins.noice')
+    end,
+    requires = {
+      'MunifTanjim/nui.nvim',
+      'rcarriga/nvim-notify',
+    }
+  }
+
+  use {
     'jose-elias-alvarez/null-ls.nvim',
     config = function()
       require('user.plugins.null-ls')
@@ -136,6 +147,13 @@ return require('packer').startup(function(use)
       'nvim-lua/plenary.nvim',
     },
   }
+
+  use {
+    "iamcco/markdown-preview.nvim", 
+    run = "cd app && npm install", 
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" },
+  }
+
   -- Themes
   use 'joshdick/onedark.vim'
 
